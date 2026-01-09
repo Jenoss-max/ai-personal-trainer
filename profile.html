@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>ข้อมูลผู้ใช้งาน</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>👤 ข้อมูลผู้ใช้งาน</header>
+
+<section class="controls">
+  <label>ชื่อ</label>
+  <input id="name" placeholder="ชื่อของคุณ">
+
+  <label>น้ำหนัก (kg)</label>
+  <input id="weight" type="number">
+
+  <label>ส่วนสูง (cm)</label>
+  <input id="height" type="number">
+
+  <label>เป้าหมายน้ำหนัก (kg)</label>
+  <input id="target" type="number">
+
+  <button onclick="saveProfile()">💾 บันทึกข้อมูล</button>
+</section>
+
+<section class="feedback">
+  <div id="bmiResult">–</div>
+</section>
+
+<div style="text-align:center;margin:16px;">
+  <a href="index.html"><button>⬅ กลับหน้าฝึก</button></a>
+</div>
+
+<script src="profile.js"></script>
+</body>
+</html>

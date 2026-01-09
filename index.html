@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Personal Trainer</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- MediaPipe -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils"></script>
+</head>
+
+<body>
+
+<header>
+  🤖 AI Personal Trainer
+</header>
+
+<!-- ================= NEW : PROFILE BUTTON ================= -->
+<div style="text-align:center;margin:10px;">
+  <a href="profile.html">
+    <button>👤 ข้อมูลผู้ใช้ / BMI</button>
+  </a>
+</div>
+
+<section class="controls">
+  <label>เลือกท่า</label>
+  <select id="exercise">
+    <option value="squat">Squat</option>
+  </select>
+
+  <label>จำนวนเซต</label>
+  <select id="sets">
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+  </select>
+
+  <button id="startBtn">▶ เริ่มฝึก</button>
+</section>
+
+<section class="video-area">
+  <div class="card">
+    <h3>🎥 ท่าต้นแบบ</h3>
+    <video src="Squat.mp4" controls muted></video>
+  </div>
+
+  <div class="card">
+    <h3>📷 ผู้ใช้งาน</h3>
+    <video id="camera" autoplay playsinline></video>
+    <div id="overlay">
+      <div id="timer">20</div>
+      <div id="reps">Reps: 0</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FEEDBACK + RECOMMEND ================= -->
+<section class="feedback">
+  <div id="feedbackText">รอเริ่ม...</div>
+
+  <!-- NEW : RECOVERY RECOMMENDATION -->
+  <div id="recommend"
+       style="margin-top:10px;font-size:16px;opacity:0.9;">
+    –
+  </div>
+</section>
+
+<section class="dashboard">
+  <h3>📊 ผลการฝึก</h3>
+  <table id="logTable">
+    <thead>
+      <tr>
+        <th>Set</th>
+        <th>Reps</th>
+        <th>Score</th>
+        <th>Grade</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <div class="summary">
+    <p>สรุปรวม:</p>
+    <p id="finalScore">–</p>
+    <p id="finalGrade">–</p>
+  </div>
+</section>
+
+<div style="text-align:center;margin:16px;">
+  <a href="dashboard.html">
+    <button>ดูความก้าวหน้ารายสัปดาห์</button>
+  </a>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

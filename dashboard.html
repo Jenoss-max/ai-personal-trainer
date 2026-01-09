@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard – AI Trainer</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<header>
+  📊 Dashboard ความก้าวหน้า
+</header>
+
+<section class="dashboard">
+
+  <!-- ================= GOAL (NEW) ================= -->
+  <h3>🎯 เป้าหมายการลดน้ำหนัก</h3>
+  <div id="goalBox">–</div>
+
+  <div style="background:#020617;border-radius:12px;overflow:hidden;margin-top:8px;">
+    <div id="progressBar"
+         style="height:16px;width:0%;
+                background:linear-gradient(90deg,#00fff7,#22c55e);">
+    </div>
+  </div>
+
+  <!-- DAILY -->
+  <h3 style="margin-top:20px;">📅 วันนี้</h3>
+  <div id="dailySummary">–</div>
+
+  <!-- WEEKLY -->
+  <h3 style="margin-top:14px;">📈 7 วันล่าสุด</h3>
+  <div id="weeklySummary">–</div>
+
+  <canvas id="weeklyChart" style="margin-top:10px;"></canvas>
+
+  <h3 style="margin-top:14px;">📋 รายละเอียด</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>วันที่</th>
+        <th>Accuracy</th>
+        <th>Grade</th>
+      </tr>
+    </thead>
+    <tbody id="weeklyTable"></tbody>
+  </table>
+
+</section>
+
+<div style="text-align:center;margin:16px;">
+  <a href="index.html">
+    <button>⬅ กลับไปหน้าฝึก</button>
+  </a>
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>
